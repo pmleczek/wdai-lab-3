@@ -107,6 +107,9 @@ const onFilter = (query) => {
     });
 };
 
-const searchSubmit = document.querySelector('#search-button');
+const onInput = (event) => {
+  onFilter(event.target.value);
+};
+
 const searchInput = document.querySelector('#search-input');
-searchSubmit.addEventListener('click', () => onFilter(searchInput.value));
+searchInput.addEventListener('input', onInput);

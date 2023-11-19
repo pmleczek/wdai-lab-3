@@ -22,6 +22,22 @@ p {
   justify-content: space-between;
 }
 
+#input-group {
+  display: flex;
+}
+
+#search-input {
+  border: none;
+  border-radius: 0.5rem;
+  padding-left: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+#search-input:focus {
+  outline: none;
+}
+
 #button-row {
   display: flex;
   align-items: center;
@@ -82,26 +98,12 @@ p {
   border-right-style: solid;
 }
 
-.sort-button.active,
-#search-button {
+.sort-button.active {
   background-color: #2563eb;
   color: #fff;
 }
 
-#search-input {
-    border-top-left-radius: 0.5rem;
-    
-}
-
-#search-button {
-  border: none;
-  padding: 0.5rem 1rem;
-  border-top-right-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
-}
-
-.sort-button:hover,
-#search-button:hover {
+.sort-button:hover {
   opacity: 0.8;
   cursor: pointer;
 }
