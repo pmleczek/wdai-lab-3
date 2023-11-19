@@ -1,0 +1,107 @@
+body {
+  background-color: #121212;
+  color: #fff;
+  font-family: 'Gabarito', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+#container {
+  padding: 1.5rem;
+}
+
+#header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#button-row {
+  display: flex;
+  align-items: center;
+}
+
+#title {
+  font-size: 2rem;
+  line-height: auto;
+  font-weight: 600;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+#product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.thumbnail {
+  width: 6rem;
+  height: 6rem;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 0.5rem;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.text-container {
+  flex: 1;
+}
+
+.sort-button {
+  background-color: #94a3b8;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+}
+
+.sort-button:first-of-type {
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+.sort-button:last-of-type {
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.sort-button:not(.sort-button:last-of-type) {
+  border-right-width: 1px;
+  border-right-color: #000;
+  border-right-style: solid;
+}
+
+.sort-button.active,
+#search-button {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+#search-input {
+    border-top-left-radius: 0.5rem;
+    
+}
+
+#search-button {
+  border: none;
+  padding: 0.5rem 1rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.sort-button:hover,
+#search-button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
