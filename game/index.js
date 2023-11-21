@@ -52,7 +52,7 @@ const spawnZombie = () => {
 
   zombie.style.zIndex = 50 + Math.random() * 100;
 
-  zombie.style.bottom = `${Math.random() * 250}px`;
+  zombie.style.bottom = `${Math.random() * 150}px`;
 
   const moveSpeed = Math.floor(Math.random() * 20 + 10);
   zombie.style.animationDuration = `0.5s, ${moveSpeed}s`;
