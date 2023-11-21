@@ -13,25 +13,33 @@ const playButton = document.querySelector('#play-button');
 const score = document.querySelector('#score');
 const scoreDisplay = document.querySelector('#score-display');
 
+let interval = null;
+
+const clearAll = () => {
+  clearInterval(interval);
+  const zombies = document.querySelectorAll('.zombie');
+  zombies.forEach((zombie) => zombie.remove());
+};
+
 const onAnimationEnd = (event) => {
   event.target.remove();
 
+  gameState.lives -= 1;
+  drawLives();
+
   if (gameState.lives === 0) {
     onEndGame();
-  } else {
-    gameState.lives -= 1;
   }
-
-  drawLives();
 };
 
 const drawLives = () => {
   livesContainer.innerHTML = '';
 
   for (let i = 0; i < 3; i++) {
-    if (i < gameState.lives - 1) {
-      
-    }
+    const element = document.createElement('img');
+    element.className = 'heart';
+    element.src = i < gameState.lives ? 'full_heart.png' : 'empty_heart.png';
+    livesContainer.appendChild(element);
   }
 };
 
@@ -65,23 +73,29 @@ const onStartGame = () => {
   container.addEventListener('mousemove', onMouseMove);
   modalPane.classList.toggle('hidden');
   aim.classList.toggle('hidden');
+  scoreDisplay.classList.add('hidden');
 
   score.innerText = gameState.score.toString().padStart(5, '0');
 
   drawLives();
 
-  setInterval(spawnZombie, 750);
+  interval = setInterval(spawnZombie, 750);
 };
 
 const onEndGame = () => {
+  gameState.status = 'over';
+
   container.classList.toggle('active');
   container.removeEventListener('mousemove', onMouseMove);
   modalPane.classList.toggle('hidden');
   aim.classList.toggle('hidden');
-  scoreDisplay.classList.toggle('hidden');
+  scoreDisplay.classList.remove('hidden');
 
   modalText.innerText = 'Game over';
   scoreDisplay.innerText = `Your score: ${gameState.score}`;
+  playButton.addEventListener('click', onClick);
+
+  clearAll();
 };
 
 const onMouseMove = (event) => {
@@ -90,9 +104,7 @@ const onMouseMove = (event) => {
 };
 
 const onClick = () => {
-  if (gameState.status === 'initial') {
-    onStartGame();
-  }
+  onStartGame();
 };
 
 const onClickContainer = (event) => {
