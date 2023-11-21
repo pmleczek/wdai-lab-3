@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  user-select: none;
+  font-family: 'Pixelify Sans', sans-serif;
+}
+
+.empty {
+  width: 100px;
+  height: 100px;
+  background-image: url('empty_heart.png');
+}
+
+.full {
+  background-image: url('full_heart.png');
+}
+
+#container {
+  background-image: url('board-bg.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+}
+
+#container.active {
+  cursor: none;
+}
+
+#aim {
+  height: 250px;
+  position: absolute;
+  width: 250px;
+  z-index: 200;
+  pointer-events: none;
+}
+
+#modal-pane {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#modal {
+  background-color: #121212;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 360px;
+}
+
+#modal-text {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #fff;
+}
+
+#play-button {
+  background-color: #ea580c;
+  color: white;
+  font-weight: 500;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  transition: opacity;
+  transition-duration: 350ms;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+}
+
+#play-button:hover {
+  opacity: 0.8;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.zombie {
+  position: absolute;
+  width: 200px;
+  height: 312px;
+  background: url(walkingdead.png);
+  animation: background 0.5s 0s infinite steps(9), walk 10s 0s 1 linear;
+  z-index: 50;
+  left: 110%;
+}
+
+#score {
+  color: #fff;
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  font-size: 5rem;
+  font-family: 'Pixelify Sans', sans-serif;
+}
+
+@keyframes background {
+  100% {
+    background-position: -1800px 0;
+  }
+}
+
+@keyframes walk {
+  100% {
+    left: -200px;
+  }
+}

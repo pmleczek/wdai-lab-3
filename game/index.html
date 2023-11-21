@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+    </style>
+    <link rel="stylesheet" href="index.css" />
+    <title>Game</title>
+  </head>
+  <body>
+    <div id="container">
+      <span id="score">00000</span>
+      <div id="lives"></div>
+      <img class="hidden" id="aim" src="aim.png" />
+    </div>
+    <div id="modal-pane">
+      <div id="modal">
+        <h1 id="modal-text">Click to play</h1>
+        <p class="hidden" id="score-display"></p>
+        <button id="play-button">Play</button>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
